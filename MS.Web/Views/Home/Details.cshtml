@@ -1,0 +1,97 @@
+﻿@model MS.Domain.Entities.Mobile
+
+<br />
+
+
+<h1>@Model.Name</h1>
+
+<br />
+@{var act = true;}
+<div id="sidebar-wrapper" style="padding-top : 0">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @foreach (var item in Model.Photos)
+            {
+                <div class="carousel-item @(act ? "active" : "")">
+                    <img class="d-block w-100 photo-carrousel" src="@item.Link" alt="First slide">
+                </div>
+                act = false;
+            }
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <br/>
+    <div class="center-item">
+        <a href="@Model.Video.Link" target="_blank" class="btn btn-primary">Play Video</a>
+    </div>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dimensions)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dimensions)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScreenSize)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScreenSize)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Resolution)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resolution)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Processor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Processor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Memory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Memory)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OS)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OS)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
